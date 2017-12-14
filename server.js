@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express()
+const path = require('path')
 
-app.get('/', (req, res) => {
-	console.log("homepage")
-	res.send("homepage")
+app.get("/", (req, res) => {
+	res.send("This is the root. I'll add something here eventually.")
 })
 
 app.get("/:date", (req, res) => {
@@ -27,7 +27,7 @@ app.get("/:date", (req, res) => {
 			time.natural = null
 			time.unix = unixDate
 
-			return res.send(JSON.stringify(time) + " No date for you ;( Forever alone")
+			return res.send(JSON.stringify(time) + "\nNo date for you ;( Forever alone")
 		}
 		
 		time.natural = strDate
